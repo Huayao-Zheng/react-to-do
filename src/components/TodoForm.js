@@ -17,7 +17,9 @@ const TodoForm = () => {
 
   return (
     <form onSubmit={handleOnSubmit}>
+      <span className="circle-box" />
       <input
+        placeholder="Create a new todo..."
         type="text"
         value={todoItem}
         onChange={(e) => setTodoItem(e.target.value)}

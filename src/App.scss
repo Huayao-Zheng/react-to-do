@@ -10,21 +10,28 @@
 }
 
 :root {
+  --box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  --circle-border-color: #e3e4f1;
+  --circle-border-hover-and-bg-color: linear-gradient(
+    135deg,
+    #55ddff 0%,
+    #c058f3 100%
+  );
+  --input-placeholder-text-color: #9394a5;
   --Very-Light-Blue: #fafafa;
-  --Very-Light-Grayish-Blue: #e4e5f1;
   --Light-Grayish-Blue: #d2d3db;
-  --Dark-Grayish-Blue: #9394a5;
   --Very-Dark-Grayish-Blue: #484b6a;
 }
 
 .darkTheme {
+  --box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+  --circle-border-color: #393a4c;
+  --input-placeholder-text-color: #767992;
   --Very-Dark-Blue: #161722;
   --Very-Dark-Desaturated-Blue: #25273c;
   --Light-Grayish-Blue: #cacde8;
   --Light-Grayish-Blue-hover: #e4e5f1;
-  --Dark-Grayish-Blue: #777a92;
   --Very-Dark-Grayish-Blue: #4d5066;
-  --Very-Dark-Grayish-Blue: #393a4c;
 }
 
 body,

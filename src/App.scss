@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Spartan:wght@700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+:root {
+  --Very-Light-Blue: #fafafa;
+  --Very-Light-Grayish-Blue: #e4e5f1;
+  --Light-Grayish-Blue: #d2d3db;
+  --Dark-Grayish-Blue: #9394a5;
+  --Very-Dark-Grayish-Blue: #484b6a;
+}
+
+.darkTheme {
+  --Very-Dark-Blue: #161722;
+  --Very-Dark-Desaturated-Blue: #25273c;
+  --Light-Grayish-Blue: #cacde8;
+  --Light-Grayish-Blue-hover: #e4e5f1;
+  --Dark-Grayish-Blue: #777a92;
+  --Very-Dark-Grayish-Blue: #4d5066;
+  --Very-Dark-Grayish-Blue: #393a4c;
+}
+
+body,
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  background: var(--Very-Light-Blue);
+}
+
+#root {
+  background: url('./images/bg-desktop-light.jpg') no-repeat;
+  background-size: contain;
+}
+
+main {
+  max-width: 540px;
+  margin: auto;
+  padding-top: 70px;
+
+  h1 {
+    color: #fff;
+  }
+}

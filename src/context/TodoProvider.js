@@ -2,18 +2,37 @@ import { createContext, useContext, useState } from 'react';
 
 const TodoContext = createContext();
 
+const defaultValue = [
+  {
+    id: 1,
+    content: 'work out',
+    completed: false,
+  },
+];
+
+let id = 1;
+
 export const TodoProvider = ({ children }) => {
-  const [todoList, setTodoList] = useState(['defaultValue']);
+  const [todoList, setTodoList] = useState(defaultValue);
 
   const getLengthOfTodoItems = () => todoList.length;
 
-  const addTodoItem = (newTodoItem) => {
-    setTodoList([...todoList, newTodoItem]);
+  const addTodoItem = (content) => {
+    id++;
+    setTodoList([...todoList, { id, content, completed: false }]);
   };
 
-  const deleteTodoItem = (targetIdx) => {
+  const deleteTodoItem = (id) => {
     setTodoList((prevTodoList) =>
-      prevTodoList.filter((_, idx) => idx !== targetIdx)
+      prevTodoList.filter((todo) => todo.id !== id)
+    );
+  };
+
+  const completeTodoItem = (id) => {
+    setTodoList((prevTodoList) =>
+      prevTodoList.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
     );
   };
 
@@ -22,6 +41,7 @@ export const TodoProvider = ({ children }) => {
     getLengthOfTodoItems,
     addTodoItem,
     deleteTodoItem,
+    completeTodoItem,
   };
 
   return (

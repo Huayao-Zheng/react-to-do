@@ -4,7 +4,7 @@ import DeleteButton from './DeleteButton/DeleteButton';
 import TodoContent from './TodoContent/TodoContent';
 import './TodoItem.scss';
 
-const TodoItem = ({ id, todoItem }) => {
+const TodoItem = ({ id, content }) => {
   const [isCompleted, setCompleted] = useState(false);
 
   const toggleClass = () => {
@@ -18,7 +18,7 @@ const TodoItem = ({ id, todoItem }) => {
         isCompleted={isCompleted}
         id={id}
       />
-      <TodoContent todoItem={todoItem} isCompleted={isCompleted} />
+      <TodoContent content={content} isCompleted={isCompleted} />
       <DeleteButton id={id} />
     </li>
   );

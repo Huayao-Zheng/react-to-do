@@ -1,10 +1,10 @@
 import React from 'react';
 import './TodoContent.scss';
 
-const TodoContent = ({ todoItem, isCompleted }) => {
+const TodoContent = ({ content, isCompleted }) => {
   return (
     <div className={`todo__content ${isCompleted ? 'cross-out' : null}`}>
-      {todoItem}
+      {content}
     </div>
   );
 };

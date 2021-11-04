@@ -4,8 +4,33 @@ const TodoContext = createContext();
 
 const defaultValue = [
   {
-    id: 1,
-    content: 'work out',
+    id: 2,
+    content: 'Complete online JavaScript course',
+    completed: false,
+  },
+  {
+    id: 3,
+    content: 'Jog around the park 3x',
+    completed: false,
+  },
+  {
+    id: 4,
+    content: '10 minutes meditation',
+    completed: false,
+  },
+  {
+    id: 5,
+    content: 'Read for 1 hour',
+    completed: false,
+  },
+  {
+    id: 6,
+    content: 'Pick up groceries',
+    completed: false,
+  },
+  {
+    id: 7,
+    content: 'Complete Todo App on Frontend Mentor',
     completed: false,
   },
 ];
@@ -14,6 +39,7 @@ let id = 1;
 
 export const TodoProvider = ({ children }) => {
   const [todoList, setTodoList] = useState(defaultValue);
+  console.log(todoList);
 
   const getLengthOfTodoItems = () => todoList.length;
 

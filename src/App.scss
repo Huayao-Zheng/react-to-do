@@ -3,10 +3,11 @@
 *,
 *::before,
 *::after {
+  font-family: 'Josefin Sans', sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Josefin Sans', sans-serif;
+  border: 0;
 }
 
 :root {
@@ -22,6 +23,9 @@
   --input-placeholder-text-color: #9394a5;
   --input-text-color: #393a4b;
   --todo-text-color: #494c6b;
+  --status-bar-btn-color: #9495a5;
+  --status-bar-btn-hover-color: #494c6b;
+  --status-bar-btn-active-color: #3a7cfd;
 }
 
 .darkTheme {
@@ -32,6 +36,8 @@
   --input-placeholder-text-color: #767992;
   --input-text-color: #c8cbe7;
   --todo-text-color: #c8cbe7;
+  --status-bar-btn-color: #5b5e7e;
+  --status-bar-btn-hover-color: #e3e4f1;
 }
 
 body,

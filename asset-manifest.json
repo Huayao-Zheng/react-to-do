@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-to-do/static/css/main.6932dc4e.chunk.css",
+    "main.js": "/react-to-do/static/js/main.b9ed2a06.chunk.js",
+    "main.js.map": "/react-to-do/static/js/main.b9ed2a06.chunk.js.map",
+    "runtime-main.js": "/react-to-do/static/js/runtime-main.beab3e9b.js",
+    "runtime-main.js.map": "/react-to-do/static/js/runtime-main.beab3e9b.js.map",
+    "static/js/2.fff93819.chunk.js": "/react-to-do/static/js/2.fff93819.chunk.js",
+    "static/js/2.fff93819.chunk.js.map": "/react-to-do/static/js/2.fff93819.chunk.js.map",
+    "static/js/3.07bed89a.chunk.js": "/react-to-do/static/js/3.07bed89a.chunk.js",
+    "static/js/3.07bed89a.chunk.js.map": "/react-to-do/static/js/3.07bed89a.chunk.js.map",
+    "index.html": "/react-to-do/index.html",
+    "static/css/main.6932dc4e.chunk.css.map": "/react-to-do/static/css/main.6932dc4e.chunk.css.map",
+    "static/js/2.fff93819.chunk.js.LICENSE.txt": "/react-to-do/static/js/2.fff93819.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/react-to-do/static/media/bg-desktop-light.3508d620.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.beab3e9b.js",
+    "static/js/2.fff93819.chunk.js",
+    "static/css/main.6932dc4e.chunk.css",
+    "static/js/main.b9ed2a06.chunk.js"
+  ]
+}

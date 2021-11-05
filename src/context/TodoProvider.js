@@ -1,73 +1,63 @@
 import { createContext, useContext, useState } from 'react';
+import {
+  getTodoListFromlocalStorage,
+  storeNewTodoListToLocal,
+} from './FillLocalStorage';
 
 const TodoContext = createContext();
 
-const defaultValue = [
-  {
-    id: 2,
-    content: 'Complete online JavaScript course',
-    completed: false,
-  },
-  {
-    id: 3,
-    content: 'Jog around the park 3x',
-    completed: false,
-  },
-  {
-    id: 4,
-    content: '10 minutes meditation',
-    completed: false,
-  },
-  {
-    id: 5,
-    content: 'Read for 1 hour',
-    completed: false,
-  },
-  {
-    id: 6,
-    content: 'Pick up groceries',
-    completed: false,
-  },
-  {
-    id: 7,
-    content: 'Complete Todo App on Frontend Mentor',
-    completed: false,
-  },
-];
-
-let id = 1;
+let id = new Date().getTime();
 
 export const TodoProvider = ({ children }) => {
-  const [todoList, setTodoList] = useState(defaultValue);
-  console.log(todoList);
-
-  const getLengthOfTodoItems = () => todoList.length;
+  const [todoList, setTodoList] = useState(getTodoListFromlocalStorage());
+  const [status, setStatus] = useState(''); //'all' 'active'  'completed'
 
   const addTodoItem = (content) => {
+    const newTodoList = [...todoList, { id, content, completed: false }];
+    setTodoList(newTodoList);
+    storeNewTodoListToLocal(newTodoList);
     id++;
-    setTodoList([...todoList, { id, content, completed: false }]);
   };
 
   const deleteTodoItem = (id) => {
-    setTodoList((prevTodoList) =>
-      prevTodoList.filter((todo) => todo.id !== id)
-    );
+    const newTodoList = todoList.filter((todo) => todo.id !== id);
+    setTodoList(newTodoList);
+    storeNewTodoListToLocal(newTodoList);
   };
 
   const completeTodoItem = (id) => {
-    setTodoList((prevTodoList) =>
-      prevTodoList.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
-    );
+    const newTodoList = todoList.map((todo) => {
+      if (todo.id === id && todo.completed === false) {
+        return { ...todo, completed: true };
+      } else if (todo.id === id && todo.completed === true) {
+        return { ...todo, completed: false };
+      } else {
+        return todo;
+      }
+    });
+
+    setTodoList(newTodoList);
+    storeNewTodoListToLocal(newTodoList);
   };
+
+  const isCompleted = (id) =>
+    todoList.find((todo) => todo.id === id && todo.completed === true);
+
+  const getLengthOfTodoItems = () => todoList.length;
+  const getActiveTodoItems = () => todoList.filter((todo) => !todo.completed);
+  const getCompletedTodoItems = () => todoList.filter((todo) => todo.completed);
 
   const contextValue = {
     todoList,
-    getLengthOfTodoItems,
+    status,
+    setStatus,
+    isCompleted,
     addTodoItem,
     deleteTodoItem,
     completeTodoItem,
+    getLengthOfTodoItems,
+    getActiveTodoItems,
+    getCompletedTodoItems,
   };
 
   return (

@@ -5,7 +5,32 @@ import './TodoList.scss';
 import TodoListStatusBar from './TodoListStatusBar/TodoListStatusBar';
 
 const TodoList = () => {
-  const { todoList } = useTodoContext();
+  const { status, todoList, getActiveTodoItems, getCompletedTodoItems } =
+    useTodoContext();
+
+  if (status === 'active') {
+    return (
+      <>
+        <ul className="todos">
+          {getActiveTodoItems().map(({ id, content }) => (
+            <TodoItem key={id} content={content} id={id} />
+          ))}
+        </ul>
+        <TodoListStatusBar />
+      </>
+    );
+  } else if (status === 'completed') {
+    return (
+      <>
+        <ul className="todos">
+          {getCompletedTodoItems().map(({ id, content }) => (
+            <TodoItem key={id} content={content} id={id} />
+          ))}
+        </ul>
+        <TodoListStatusBar />
+      </>
+    );
+  }
 
   return (
     <>

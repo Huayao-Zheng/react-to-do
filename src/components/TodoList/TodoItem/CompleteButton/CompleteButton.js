@@ -1,18 +1,17 @@
 import { useTodoContext } from '../../../../context/TodoProvider';
 import './CompleteButton.scss';
 
-const CompleteButton = ({ toggleClass, isCompleted, id }) => {
-  const { completeTodoItem } = useTodoContext();
+const CompleteButton = ({ id }) => {
+  const { isCompleted, completeTodoItem } = useTodoContext();
 
   return (
-    <div
+    <button
       onClick={() => {
         completeTodoItem(id);
-        toggleClass();
       }}
-      className={`todo__complete-btn ${isCompleted ? 'completed' : null}`}
+      className={`todo__complete-btn ${isCompleted(id) ? 'completed' : null}`}
     >
-      <div className={`btn-bg-filler ${isCompleted ? 'completed' : null}`}>
+      <div className={`btn-bg-filler ${isCompleted(id) ? 'completed' : null}`}>
         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
           <path
             fill="none"
@@ -22,7 +21,7 @@ const CompleteButton = ({ toggleClass, isCompleted, id }) => {
           />
         </svg>
       </div>
-    </div>
+    </button>
   );
 };
 

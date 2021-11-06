@@ -10,7 +10,7 @@ let id = new Date().getTime();
 
 export const TodoProvider = ({ children }) => {
   const [todoList, setTodoList] = useState(getTodoListFromlocalStorage());
-  const [status, setStatus] = useState(''); //'all' 'active'  'completed'
+  const [status, setStatus] = useState(''); // '' or 'active' or 'completed'
 
   const addTodoItem = (content) => {
     const newTodoList = [...todoList, { id, content, completed: false }];

@@ -2,10 +2,25 @@ import React from 'react';
 import './Header.scss';
 
 const Header = () => {
+  const toggleDarkMod = () => {
+    const body = document.querySelector('body');
+
+    if (body.classList.contains('darkTheme')) {
+      body.classList.remove('darkTheme');
+    } else {
+      body.classList.add('darkTheme');
+    }
+  };
+
   return (
     <header>
       <h1>TODO</h1>
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+      <svg
+        onClick={toggleDarkMod}
+        xmlns="http://www.w3.org/2000/svg"
+        width="26"
+        height="26"
+      >
         <path
           fill="#FFF"
           fillRule="evenodd"

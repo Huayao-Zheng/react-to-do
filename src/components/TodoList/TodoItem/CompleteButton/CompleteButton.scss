@@ -2,6 +2,9 @@
   background: var(--circle-border-hover-and-bg-color) !important;
   border: none !important;
 }
+.showSVG {
+  visibility: visible !important;
+}
 
 .todo__complete-btn {
   display: grid;
@@ -28,5 +31,9 @@
     border-radius: 50%;
     background: var(--secondary-bg-color);
     transition: 0.3s;
+
+    svg {
+      visibility: hidden;
+    }
   }
 }

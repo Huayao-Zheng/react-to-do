@@ -12,7 +12,12 @@ const CompleteButton = ({ id }) => {
       className={`todo__complete-btn ${isCompleted(id) ? 'completed' : null}`}
     >
       <div className={`btn-bg-filler ${isCompleted(id) ? 'completed' : null}`}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
+        <svg
+          className={`${isCompleted(id) ? 'showSVG' : null}`}
+          xmlns="http://www.w3.org/2000/svg"
+          width="11"
+          height="9"
+        >
           <path
             fill="none"
             stroke="#FFF"

@@ -13,6 +13,7 @@
 :root {
   --primary-bg-color: #fafafa;
   --secondary-bg-color: #fff;
+  --bg-image: url('./images/bg-desktop-light.jpg') no-repeat;
   --box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
   --circle-border-color: #e3e4f1;
   --circle-border-hover-and-bg-color: linear-gradient(
@@ -31,6 +32,7 @@
 .darkTheme {
   --primary-bg-color: #171823;
   --secondary-bg-color: #25273d;
+  // --bg-image: url('./images/bg-desktop-dark.jpg') no-repeat;
   --box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
   --circle-border-color: #393a4c;
   --input-placeholder-text-color: #767992;
@@ -51,7 +53,8 @@ body {
 }
 
 #root {
-  background: url('./images/bg-desktop-light.jpg') no-repeat;
+  // background: url('./images/bg-desktop-light.jpg') no-repeat;
+  background: var(--bg-image);
   background-size: contain;
 }
 

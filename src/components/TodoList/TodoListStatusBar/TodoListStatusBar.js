@@ -3,11 +3,13 @@ import { useTodoContext } from '../../../context/TodoProvider';
 import './TodoListStatusBar.scss';
 
 const TodoListStatus = () => {
-  const { setStatus } = useTodoContext();
+  const { setStatus, getLengthOfTodoItems } = useTodoContext();
 
   return (
     <div className="status">
-      <div className="status__items-left">5 items left</div>
+      <div className="status__items-left">
+        {getLengthOfTodoItems()} items left
+      </div>
 
       <div className="aac-wrapper">
         <button

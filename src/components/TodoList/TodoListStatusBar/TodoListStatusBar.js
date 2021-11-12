@@ -3,7 +3,7 @@ import { useTodoContext } from '../../../context/TodoProvider';
 import './TodoListStatusBar.scss';
 
 const TodoListStatus = ({ todoListSize }) => {
-  const { setStatus } = useTodoContext();
+  const { status, setStatus, clearAllCompletedTodos } = useTodoContext();
 
   return (
     <div className="status">
@@ -11,26 +11,35 @@ const TodoListStatus = ({ todoListSize }) => {
 
       <div className="aac-wrapper">
         <button
-          className="status-btns status__all"
           onClick={() => setStatus('')}
+          className={`status-btns status__all ${
+            status === '' ? 'hightLight' : null
+          }`}
         >
           All
         </button>
         <button
-          className="status-btns status__active"
           onClick={() => setStatus('active')}
+          className={`status-btns status__active ${
+            status === 'active' ? 'hightLight' : null
+          }`}
         >
           Active
         </button>
         <button
-          className="status-btns status__completed"
           onClick={() => setStatus('completed')}
+          className={`status-btns status__completed ${
+            status === 'completed' ? 'hightLight' : null
+          }`}
         >
           Completed
         </button>
       </div>
 
-      <button className="status-btns status__clear-completed">
+      <button
+        onClick={clearAllCompletedTodos}
+        className="status-btns status__clear-completed"
+      >
         Clear Completed
       </button>
     </div>

@@ -47,6 +47,12 @@ export const TodoProvider = ({ children }) => {
   const getActiveTodoItems = () => todoList.filter((todo) => !todo.completed);
   const getCompletedTodoItems = () => todoList.filter((todo) => todo.completed);
 
+  const clearAllCompletedTodos = () => {
+    const newTodoList = todoList.filter((todo) => todo.completed === false);
+    setTodoList(newTodoList);
+    storeNewTodoListToLocal(newTodoList);
+  };
+
   const contextValue = {
     todoList,
     status,
@@ -58,6 +64,7 @@ export const TodoProvider = ({ children }) => {
     getLengthOfTodoItems,
     getActiveTodoItems,
     getCompletedTodoItems,
+    clearAllCompletedTodos,
   };
 
   return (

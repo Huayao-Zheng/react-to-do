@@ -10,6 +10,19 @@
   border: 0;
 }
 
+.darkTheme {
+  --primary-bg-color: #171823;
+  --secondary-bg-color: #25273d;
+  --bg-image: url('./images/bg-desktop-dark.jpg') no-repeat;
+  --box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+  --circle-border-color: #393a4c;
+  --input-placeholder-text-color: #767992;
+  --input-text-color: #c8cbe7;
+  --todo-text-color: #c8cbe7;
+  --status-bar-btn-color: #5b5e7e;
+  --status-bar-btn-hover-color: #e3e4f1;
+}
+
 :root {
   --primary-bg-color: #fafafa;
   --secondary-bg-color: #fff;
@@ -29,19 +42,6 @@
   --status-bar-btn-active-color: #3a7cfd;
 }
 
-.darkTheme {
-  --primary-bg-color: #171823;
-  --secondary-bg-color: #25273d;
-  // --bg-image: url('./images/bg-desktop-dark.jpg') no-repeat;
-  --box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
-  --circle-border-color: #393a4c;
-  --input-placeholder-text-color: #767992;
-  --input-text-color: #c8cbe7;
-  --todo-text-color: #c8cbe7;
-  --status-bar-btn-color: #5b5e7e;
-  --status-bar-btn-hover-color: #e3e4f1;
-}
-
 body,
 #root {
   width: 100vw;
@@ -53,7 +53,6 @@ body {
 }
 
 #root {
-  // background: url('./images/bg-desktop-light.jpg') no-repeat;
   background: var(--bg-image);
   background-size: contain;
 }

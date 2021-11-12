@@ -2,14 +2,12 @@ import React from 'react';
 import { useTodoContext } from '../../../context/TodoProvider';
 import './TodoListStatusBar.scss';
 
-const TodoListStatus = () => {
-  const { setStatus, getLengthOfTodoItems } = useTodoContext();
+const TodoListStatus = ({ todoListSize }) => {
+  const { setStatus } = useTodoContext();
 
   return (
     <div className="status">
-      <div className="status__items-left">
-        {getLengthOfTodoItems()} items left
-      </div>
+      <div className="status__items-left">{todoListSize} items left</div>
 
       <div className="aac-wrapper">
         <button

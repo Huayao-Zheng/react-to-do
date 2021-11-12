@@ -7,27 +7,29 @@ import TodoListStatusBar from './TodoListStatusBar/TodoListStatusBar';
 const TodoList = () => {
   const { status, todoList, getActiveTodoItems, getCompletedTodoItems } =
     useTodoContext();
+  const activeTodos = getActiveTodoItems();
+  const completedTodos = getCompletedTodoItems();
 
   if (status === 'active') {
     return (
       <>
         <ul className="todos">
-          {getActiveTodoItems().map(({ id, content }) => (
+          {activeTodos.map(({ id, content }) => (
             <TodoItem key={id} content={content} id={id} />
           ))}
         </ul>
-        <TodoListStatusBar />
+        <TodoListStatusBar todoListSize={activeTodos.length} />
       </>
     );
   } else if (status === 'completed') {
     return (
       <>
         <ul className="todos">
-          {getCompletedTodoItems().map(({ id, content }) => (
+          {completedTodos.map(({ id, content }) => (
             <TodoItem key={id} content={content} id={id} />
           ))}
         </ul>
-        <TodoListStatusBar />
+        <TodoListStatusBar todoListSize={completedTodos.length} />
       </>
     );
   }
@@ -39,7 +41,7 @@ const TodoList = () => {
           <TodoItem key={id} content={content} id={id} />
         ))}
       </ul>
-      <TodoListStatusBar />
+      <TodoListStatusBar todoListSize={todoList.length} />
     </>
   );
 };
